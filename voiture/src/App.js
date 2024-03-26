@@ -4,19 +4,18 @@ import Mycars from './components/MyCars';
 class App extends Component{
 
   state = {
-    titre: 'Mon Catalogue Voiture',
-    color: 'green',
-    backgroundColor: 'black'
+    titre: 'Mon Catalogue Voiture'
   }
   
+arrow = (e) => {
+    this.setState({titre : "Notre Catalogue Voiture ;)"})
+  }
+
   render(){
     return (
      <div className="App">
-      <Mycars 
-        title={this.state.titre}
-        color={this.state.color}
-        backgroundColor={this.state.backgroundColor}
-      />
+      <Mycars title={this.state.titre}/>
+      <button onClick={this.arrow}>Changer le nom en dur</button>
      </div>
     );
   }

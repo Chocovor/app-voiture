@@ -7,20 +7,35 @@ import MyHeader from  "../components/MyHeader"
 class Mycars extends Component{
     state={
         cars: ["Ford", "Mercedes", "BMW", "Audi", "Maserati", "Ferrari"],
-        prix: ["<100k", "<100k"]
+        prix: ["<100k", ">100k"]
+    }
+
+    noCopy = () => {
+        alert('merci de ne pas copier le texte')
+    }
+
+    addStyle = (e) => {
+        e.target.classList.contains ("styled") ? e.target.classList.remove ("styled") : e.target.classList.add ("styled");
     }
 
     render(){
         console.log(this);
-        return( 
+        return(
+
+            
             <div>
+                <h1>Garage des Hauts Fonctionnaires </h1>
                 <Wrapper>
                     <MyHeader 
                         myStyle={this.props.color}
                     >
-                        {this.props.title}
+                        <h2 onMouseOver={this.addStyle}>{this.props.title}</h2>
+                        <p onCopy={this.noCopy}>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam feugiat,
+                            turpis at pulvinar vulputate, erat libero tristique tellus, nec bibendum odio
+                            risus sit amet ante. Aliquam erat volutpat. Nunc auctor. Mauris pretium quam
+                        </p>
                     </MyHeader>     
-                </Wrapper> 
+                </Wrapper>  
                 
                 <Cars color="red" price={this.state.prix[0]}>{this.state.cars[0]}</Cars>
                 <Cars color="black" price={this.state.prix[0]}>{this.state.cars[1]}</Cars>
@@ -44,3 +59,4 @@ class Mycars extends Component{
 }
 
 export default Mycars
+
