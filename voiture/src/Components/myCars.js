@@ -7,7 +7,7 @@ class Mycars extends Component{
         console.log(this);
         return( 
             <div>    
-                <h1>{this.props.title}</h1>
+                <h1 style={{color: this.props.color, backgroundColor: this.props.backgroundColor}}>{this.props.title}</h1>
 
                 <Cars color="red">FORD</Cars>
                 <Cars color="black">MERCEDES</Cars>
