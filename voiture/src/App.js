@@ -7,8 +7,11 @@ class App extends Component{
     titre: 'Mon Catalogue Voiture'
   }
   
-arrow = (e) => {
-    this.setState({titre : "Notre Catalogue Voiture ;)"})
+arrow = () => {
+    this.setState({titre : "STORE CLOSED"})
+  }
+arrow2 = () => {
+    this.setState({titre : "Mon Catalogue Voiture"})
   }
 
   render(){
@@ -16,6 +19,7 @@ arrow = (e) => {
      <div className="App">
       <Mycars title={this.state.titre}/>
       <button onClick={this.arrow}>Changer le nom en dur</button>
+      <button onClick={this.arrow2}>remettre le titre d'origine</button>
      </div>
     );
   }

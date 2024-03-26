@@ -36,15 +36,15 @@ class Mycars extends Component{
                         </p>
                     </MyHeader>     
                 </Wrapper>  
-                
-                <Cars color="red" price={this.state.prix[0]}>{this.state.cars[0]}</Cars>
-                <Cars color="black" price={this.state.prix[0]}>{this.state.cars[1]}</Cars>
-                <Cars color="green" price={this.state.prix[0]}>{this.state.cars[2]}</Cars>
-                <Cars price={this.state.prix[1]}>{this.state.cars[4]}</Cars>
-                <Cars></Cars>
-                <Cars color='grey' price={this.state.prix[0]}>{this.state.cars[3]}</Cars>
-                <Cars color="white"price={this.state.prix[1]}>{this.state.cars[5]}</Cars>
-
+                <div style={{display:'flex', flexWrap:"wrap"}}>
+                    <Cars color="red" price={this.state.prix[0]}>{this.state.cars[0]}</Cars>
+                    <Cars color="black" price={this.state.prix[0]}>{this.state.cars[1]}</Cars>
+                    <Cars color="green" price={this.state.prix[0]}>{this.state.cars[2]}</Cars>
+                    <Cars price={this.state.prix[1]}>{this.state.cars[4]}</Cars>
+                    <Cars></Cars>
+                    <Cars color='grey' price={this.state.prix[0]}>{this.state.cars[3]}</Cars>
+                    <Cars color="white"price={this.state.prix[1]}>{this.state.cars[5]}</Cars>
+                </div>
                 <Wrapper>
                     <MyHeader 
                             myStyle={this.props.color}
