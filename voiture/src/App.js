@@ -7,12 +7,34 @@ class App extends Component{
     titre: 'Mon Catalogue Voiture'
   }
   
-arrow = () => {
-    this.setState({titre : "STORE CLOSED"})
+  // bouton 1
+  arrow = () => {
+      this.setState({titre : "STORE CLOSED"})
+    }
+    // bouton 2
+  arrow2 = () => {
+      this.setState({titre : "STORE OPEN"})
+    }
+    // bouton 3
+  changeViaParam = (titre) => {
+    this.setState({
+      titre: 'Mon garage de ' + titre
+    })
   }
-arrow2 = () => {
-    this.setState({titre : "Mon Catalogue Voiture"})
+    // bouton 4
+  changeViaBind = (param) => {
+    console.log(param);
+    this.setState({
+      titre : 'voiture '+ param +'.'
+    })
   }
+
+    //modifier le titre depuis le site
+    changeViaInput = (e) => {
+      this.setState({
+        titre : e.target.value
+      })
+    }
 
   render(){
     return (
@@ -20,8 +42,12 @@ arrow2 = () => {
       <Mycars title={this.state.titre}/>
       <button onClick={this.arrow}>Changer le nom en dur</button>
       <button onClick={this.arrow2}>remettre le titre d'origine</button>
+      <button onClick={()=>this.changeViaParam('SUPER CAR')}>via param</button>
+      <button onClick={this.changeViaBind.bind(this, 'de luxe via Bind')}>via bind</button><br/>
+      <p style={{color:'yellow'}}>Modifier le titre à votre guise :</p>
+      <input type='text' onChange={this.changeViaInput} value={this.state.titre}/>
      </div>
-    );
+    )
   }
 }
 
