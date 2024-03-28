@@ -15,21 +15,21 @@ class App extends Component{
   arrow2 = () => {
       this.setState({titre : "STORE OPEN"})
     }
-    // bouton 3
+    // bouton 3 : on serait obligé d'utiliser toutes les method si il y en avait plusieurs
   changeViaParam = (titre) => {
     this.setState({
       titre: 'Mon garage de ' + titre
     })
   }
-    // bouton 4
+    // bouton 4 : en choisissant la ou les method(s) que l'on veut réutiliser
   changeViaBind = (param) => {
-    console.log(param);
+    //console.log(param);
     this.setState({
       titre : 'voiture '+ param +'.'
     })
   }
 
-    //modifier le titre depuis le site
+    //modifier le titre depuis le site 
     changeViaInput = (e) => {
       this.setState({
         titre : e.target.value

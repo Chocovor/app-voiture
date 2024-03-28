@@ -10,7 +10,8 @@ class Mycars extends Component{
             {name: 'Talisman', marque:'Renault', color:'noire étoilé', year:5},
             {name: 'Gallardo', marque:'Lamborghini', color:'black', year:8},
             {name: 'Hurus', marque:'Lamborghini', color:'orange', year:5},
-            {name: 'Panamera', marque:'Porsche', color:'white', year:2}
+            {name: 'Panamera', marque:'Porsche', color:'white', year:2},
+            {name: 'RS8', marque:'Audi', color: 'bleu', year:7}
         ],
 
     // Les 7 dernières voitures
@@ -24,6 +25,12 @@ class Mycars extends Component{
     addStyle = (e) => {
         e.target.classList.contains ("styled") ? e.target.classList.remove ("styled") : e.target.classList.add ("styled");
     }
+    //const year = new Date().getFullYear
+    addTenYears = () => {
+        const updatedState = this.state.voitures.map((param) => {
+            return param.year -= 10;
+        })
+        }
 
     render(){
       //  console.log(this);
@@ -41,28 +48,31 @@ class Mycars extends Component{
                         </p>
                     </MyHeader>     
                 </Wrapper>
-                <button>+ 10 ans</button>  
+                <button onClick={this.addTenYear} >+ 10 ans</button>  
                 <div style={{display:'flex', flexWrap:"wrap"}}>
-                    <Cars color={this.state.voitures[0].color}>
+                    <Cars color={this.state.voitures[0].color} year={this.state.voitures[0].year + " ans"}>
                         {this.state.voitures[0].name}({this.state.voitures[0].marque})
                     </Cars>
-                    <Cars color={this.state.voitures[1].color}>
+                    <Cars color={this.state.voitures[1].color} year={this.state.voitures[1].year + " ans"}>
                         {this.state.voitures[1].name}({this.state.voitures[1].marque})
                     </Cars> 
-                    <Cars color={this.state.voitures[2].color}>
+                    <Cars color={this.state.voitures[2].color} year={this.state.voitures[2].year + " ans"}>
                         {this.state.voitures[2].name}({this.state.voitures[2].marque})
                     </Cars> 
-                    <Cars color={this.state.voitures[3].color}>
+                    <Cars color={this.state.voitures[3].color} year={this.state.voitures[3].year + "  ans"}>
                         {this.state.voitures[3].name}({this.state.voitures[3].marque})
                     </Cars> 
+                    <Cars color={this.state.voitures[4].color} year={this.state.voitures[4].year + "  ans"}>
+                        {this.state.voitures[4].name}({this.state.voitures[4].marque})
+                    </Cars> 
 
-                    <Cars year="2024" color="red">{this.state.cars[0]}</Cars>
-                    <Cars year="2024" color="black">{this.state.cars[1]}</Cars>
-                    <Cars year="2024" color="green">{this.state.cars[2]}</Cars>
-                    <Cars year="2024">{this.state.cars[4]}</Cars>
+                    <Cars year="2 ans" color="red">{this.state.cars[0]}</Cars>
+                    <Cars year="2 ans" color="black">{this.state.cars[1]}</Cars>
+                    <Cars year="2 ans" color="green">{this.state.cars[2]}</Cars>
+                    <Cars year="2 ans">{this.state.cars[4]}</Cars>
                     <Cars></Cars>
-                    <Cars year="2024" color='grey'>{this.state.cars[3]}</Cars>
-                    <Cars year="2024" color="white">{this.state.cars[5]}</Cars>
+                    <Cars year="2 ans" color='grey'>{this.state.cars[3]}</Cars>
+                    <Cars year="2 ans" color="white">{this.state.cars[5]}</Cars>
                 </div>
                 <Wrapper>
                     <MyHeader 
