@@ -3,9 +3,17 @@ import Cars from './Cars';
 import Wrapper from  "../components/Wrapper";
 import MyHeader from  "../components/MyHeader"
 
-
+//Pour les premières voitures
 class Mycars extends Component{
     state={
+        voitures:[
+            {name: 'Talisman', marque:'Renault', color:'noire étoilé', year:'2019'},
+            {name: 'Gallardo', marque:'Lamborghini', color:'black', year:'2016'},
+            {name: 'Hurus', marque:'Lamborghini', color:'orange', year:'2019'},
+            {name: 'Panamera', marque:'Porsche', color:'white', year:'2023'}
+        ],
+
+    // Les 7 dernières voitures
         cars: ["Ford", "Mercedes", "BMW", "Audi", "Maserati", "Ferrari"],
         prix: ["<100k", ">100k"]
     }
@@ -21,8 +29,6 @@ class Mycars extends Component{
     render(){
       //  console.log(this);
         return(
-
-            
             <div>
                 <h1>Garage des Hauts Fonctionnaires </h1>
                 <Wrapper>
@@ -37,6 +43,15 @@ class Mycars extends Component{
                     </MyHeader>     
                 </Wrapper>  
                 <div style={{display:'flex', flexWrap:"wrap"}}>
+                    <Cars color={this.state.voitures[0].color}>
+                        {this.state.voitures[0].name}({this.state.voitures[0].marque})
+                    </Cars>
+                    <Cars color={this.state.voitures[1].color}>
+                        {this.state.voitures[1].name}({this.state.voitures[1].marque})
+                    </Cars> 
+
+
+
                     <Cars year="2024" color="red" price={this.state.prix[0]}>{this.state.cars[0]}</Cars>
                     <Cars year="2024" color="black" price={this.state.prix[0]}>{this.state.cars[1]}</Cars>
                     <Cars year="2024" color="green" price={this.state.prix[0]}>{this.state.cars[2]}</Cars>
