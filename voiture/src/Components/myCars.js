@@ -7,15 +7,14 @@ import MyHeader from  "../components/MyHeader"
 class Mycars extends Component{
     state={
         voitures:[
-            {name: 'Talisman', marque:'Renault', color:'noire étoilé', year:'2019'},
-            {name: 'Gallardo', marque:'Lamborghini', color:'black', year:'2016'},
-            {name: 'Hurus', marque:'Lamborghini', color:'orange', year:'2019'},
-            {name: 'Panamera', marque:'Porsche', color:'white', year:'2023'}
+            {name: 'Talisman', marque:'Renault', color:'noire étoilé', year:5},
+            {name: 'Gallardo', marque:'Lamborghini', color:'black', year:8},
+            {name: 'Hurus', marque:'Lamborghini', color:'orange', year:5},
+            {name: 'Panamera', marque:'Porsche', color:'white', year:2}
         ],
 
     // Les 7 dernières voitures
         cars: ["Ford", "Mercedes", "BMW", "Audi", "Maserati", "Ferrari"],
-        prix: ["<100k", ">100k"]
     }
 
     noCopy = () => {
@@ -41,7 +40,8 @@ class Mycars extends Component{
                             risus sit amet ante. Aliquam erat volutpat. Nunc auctor. Mauris pretium quam
                         </p>
                     </MyHeader>     
-                </Wrapper>  
+                </Wrapper>
+                <button>+ 10 ans</button>  
                 <div style={{display:'flex', flexWrap:"wrap"}}>
                     <Cars color={this.state.voitures[0].color}>
                         {this.state.voitures[0].name}({this.state.voitures[0].marque})
@@ -49,25 +49,28 @@ class Mycars extends Component{
                     <Cars color={this.state.voitures[1].color}>
                         {this.state.voitures[1].name}({this.state.voitures[1].marque})
                     </Cars> 
+                    <Cars color={this.state.voitures[2].color}>
+                        {this.state.voitures[2].name}({this.state.voitures[2].marque})
+                    </Cars> 
+                    <Cars color={this.state.voitures[3].color}>
+                        {this.state.voitures[3].name}({this.state.voitures[3].marque})
+                    </Cars> 
 
-
-
-                    <Cars year="2024" color="red" price={this.state.prix[0]}>{this.state.cars[0]}</Cars>
-                    <Cars year="2024" color="black" price={this.state.prix[0]}>{this.state.cars[1]}</Cars>
-                    <Cars year="2024" color="green" price={this.state.prix[0]}>{this.state.cars[2]}</Cars>
-                    <Cars year="2024" price={this.state.prix[1]}>{this.state.cars[4]}</Cars>
+                    <Cars year="2024" color="red">{this.state.cars[0]}</Cars>
+                    <Cars year="2024" color="black">{this.state.cars[1]}</Cars>
+                    <Cars year="2024" color="green">{this.state.cars[2]}</Cars>
+                    <Cars year="2024">{this.state.cars[4]}</Cars>
                     <Cars></Cars>
-                    <Cars year="2024" color='grey' price={this.state.prix[0]}>{this.state.cars[3]}</Cars>
-                    <Cars year="2024" color="white"price={this.state.prix[1]}>{this.state.cars[5]}</Cars>
+                    <Cars year="2024" color='grey'>{this.state.cars[3]}</Cars>
+                    <Cars year="2024" color="white">{this.state.cars[5]}</Cars>
                 </div>
                 <Wrapper>
                     <MyHeader 
                             myStyle={this.props.color}
                     >
-                            Nos Meilleures Ventes
+                            tableau de bord de modification du titre
                     </MyHeader>
                 </Wrapper>  
- year="2024"
             </div>  
         )
     }
