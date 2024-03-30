@@ -30,7 +30,7 @@ class Mycars extends Component{
         const updatedState = this.state.voitures.map((param) => {
             return param.year -= 10;
         })
-        }
+    }
 
     render(){
       //  console.log(this);
