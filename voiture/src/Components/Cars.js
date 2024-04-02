@@ -11,10 +11,7 @@ const Cars = ({children, color, year}) => {
         <div style={{margin:'3px', backgroundColor: "pink", width: '300px'}}>
                 <p>modele(marque) : {children}</p>
                 { color ? <p>couleur : {color}</p> : <p>Couleur: Néant</p>  }
-                <p>Age du véhicule : {year}</p> 
-                <div>
-                    <Counter/>
-                </div>                  
+                <p>Année(s) : {year}</p>            
         </div>
     ) : (<p style={{margin:'3px',backgroundColor: "red", width: '300px', color:'white', fontSize: "200%"}}>Modèle victime de son succès</p>)
 }
