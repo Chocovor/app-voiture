@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Cars from './Cars';
-import Wrapper from  "./Wrapper";
-import MyHeader from  "./MyHeader"
+//import Wrapper from  "./Wrapper";
+//import MyHeader from  "./MyHeader";
 
 //Pour les premières voitures
 class Mycars extends Component{
@@ -45,7 +45,7 @@ class Mycars extends Component{
         return(
             <div>
                 <h1>Garage des Hauts Fonctionnaires </h1>
-                <Wrapper>
+                {/*<Wrapper>
                     <MyHeader 
                         myStyle={this.props.color}
                     >
@@ -54,9 +54,9 @@ class Mycars extends Component{
                             Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam feugiat,... 
                         </p>
                     </MyHeader>     
-                </Wrapper>
+                </Wrapper>*/}
 
-                <button onClick={this.addTenYears} >+ 10 ans</button>
+                <button onClick={this.addTenYears} >cliquez-ici pour vieillir les voitures de 10 ans</button>
 
                 <p style={{color:'white'}}>Quatrième méthode</p>
                 <div style={{display:'flex', flexWrap:"wrap"}}>
@@ -87,6 +87,7 @@ class Mycars extends Component{
                  })
                 }
                 </div>
+                <p style={{color:'white'}}>1ère et 2ème méthode en commentaire</p>
                 {/*}
                 <Wrapper>
                     Deuxième méthode

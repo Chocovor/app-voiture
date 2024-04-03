@@ -1,6 +1,7 @@
 import './App.css';
 import React , {Component} from 'react';
 import Mycars from './components/iMyCars';
+import Welcome from './/components/Welcome';
 class App extends Component{
 
   state = {
@@ -46,6 +47,7 @@ class App extends Component{
       <button onClick={this.changeViaBind.bind(this, 'de luxe via Bind')}>via bind</button><br/>
       <p style={{color:'yellow'}}>Modifier le titre à votre guise :</p>
       <input type='text' onChange={this.changeViaInput} value={this.state.titre}/>
+      <Welcome/>
      </div>
     )
   }
