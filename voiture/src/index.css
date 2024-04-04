@@ -19,3 +19,6 @@ h2.styled {
 h1{
   color:aliceblue
 }
+.carBorder{
+  border: 1px solid red;
+}

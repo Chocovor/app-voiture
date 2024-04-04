@@ -3,6 +3,7 @@ import React , {Component} from 'react';
 import Mycars from './components/iMyCars';
 import Welcome from './/components/Welcome';
 import Maman from './components/Maman';
+import Form from './components/Form';
 class App extends Component{
 
   state = {
@@ -40,7 +41,9 @@ class App extends Component{
 
   render(){
     return (
+     
      <div className="App">
+      <Form/> 
       <Mycars title={this.state.titre}/>
      <button onClick={this.arrow}>Changer le nom en dur</button>
       <button onClick={this.arrow2}>remettre le titre d'origine</button>

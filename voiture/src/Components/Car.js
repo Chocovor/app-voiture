@@ -1,6 +1,29 @@
-const Car = () => {
-    return <img src={car} alt=""/>
+import React, {Component} from "react"
+import '../index.css';
+
+const Car = (props) => {
+    return (
+    <div >
+        <img src="https://img.20mn.fr/o9Jjsp84Q5mip-tYhNLD7yk/1444x920_berger-malinois-illustration" alt="image" width="200px"/>
+        <svg style={{backgroundColor:props.color}}
+            className="carBorder"height={props.height}
+            viewBox="0 0 300 100"
+            xmlns="http://www.w3.org/2000/svg"
+            stroke="red"
+            fill="grey"
+        >
+            <circle cx="50" cy="50" r="40" />
+            <circle cx="150" cy="50" r="4" />
+
+            <svg viewBox="0 0 10 10" x="200" width="100">
+                <circle cx="5" cy="5" r="4" />
+            </svg>
+            <g>
+                <title>Layer 1</title>
+                <path fill={props.color} fillRule="nonzero" strokeWidth="12.257193"/>
+            </g>
+        </svg>
+    </div>
+    )
 }
-
-
-export default Car
+export default Car; 
