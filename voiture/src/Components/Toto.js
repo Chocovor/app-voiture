@@ -7,8 +7,7 @@ const Toto = props => {
             disabled= {props.leState.disabled}
             onClick= {() => props.reponseToto("Non, je veux regarder la télé!") + console.log('le bouton marche')}
         >Réponse</button>
-        
-        <p>{props.messageToto}</p>
+        <p>{props.leState.messageToto}</p>
     </div>
   )
 }
