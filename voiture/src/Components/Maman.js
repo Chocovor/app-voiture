@@ -9,7 +9,7 @@ class Maman extends Component {
     }
 
     // Compléter le code de la méthode ordreMaman.
-    ordreMaman = () => 
+    ordreMaman = (param) => {alert(param)}
     reponseToto = msg => this.setState({ messageToto: msg });
 
     render() {

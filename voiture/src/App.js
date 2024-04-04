@@ -2,6 +2,8 @@ import './App.css';
 import React , {Component} from 'react';
 import Mycars from './components/iMyCars';
 import Welcome from './/components/Welcome';
+import Maman from './components/Maman';
+import Toto from './components/Toto';
 class App extends Component{
 
   state = {
