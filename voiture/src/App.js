@@ -40,11 +40,13 @@ class App extends Component{
     }
 
   render(){
+    const myClass = this.props.head ?  'red' : 'blue' ;
     return (
      
      <div className="App">
-      <Form/> 
-      <Mycars title={this.state.titre}/>
+      <Form head={true}/> 
+      <p className={myClass}>Je suis rouge ou bleu</p>
+      {/*<Mycars title={this.state.titre}/>
      <button onClick={this.arrow}>Changer le nom en dur</button>
       <button onClick={this.arrow2}>remettre le titre d'origine</button>
       <button onClick={()=>this.changeViaParam('SUPER CAR')}>via param</button>
@@ -52,7 +54,7 @@ class App extends Component{
       <p style={{color:'yellow'}}>Modifier le titre à votre guise :</p>
       <input type='text' onChange={this.changeViaInput} value={this.state.titre}/>
       <Welcome/>
-      <Maman/>
+    <Maman/>*/}
      </div>
     )
   }

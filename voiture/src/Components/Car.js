@@ -1,18 +1,21 @@
 import React, {Component} from "react"
 import '../index.css';
 
+const message= "photo d'un chien berger-malinois"
+
 const Car = (props) => {
     return (
     <div >
-        <img src="https://img.20mn.fr/o9Jjsp84Q5mip-tYhNLD7yk/1444x920_berger-malinois-illustration" alt="image" width="200px"/>
+        <img src={require('../img/e.jpg')}/>
+        <img src="https://img.20mn.fr/o9Jjsp84Q5mip-tYhNLD7yk/1444x920_berger-malinois-illustration" alt={message} width="200px"/>
         <svg style={{backgroundColor:props.color}}
             className="carBorder"height={props.height}
             viewBox="0 0 300 100"
-            xmlns="http://www.w3.org/2000/svg"
-            stroke="red"
-            fill="grey"
+            xmlns=""
+            stroke="grey"
+            fill="black"
         >
-            <circle cx="50" cy="50" r="40" />
+            <circle cx="50" cy="50" r="25" />
             <circle cx="150" cy="50" r="4" />
 
             <svg viewBox="0 0 10 10" x="200" width="100">
