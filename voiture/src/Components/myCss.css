@@ -1,0 +1,25 @@
+.blue {
+    color: blue
+}
+
+.red{
+    color: red
+}
+
+.bigFont {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.cartePostale,.rendu, .formul{
+    display: flex;
+    flex-direction: column;
+}
+img{
+    margin-left:25% ;
+    margin-right:25% ;
+}
+.cartePostale{
+    background-color: black;
+    color: aliceblue;
+}
