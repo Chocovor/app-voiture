@@ -43,10 +43,13 @@ class App extends Component{
 
     sayHello =  () => {
        alert('Bonjour !')
-     }
-     sayThankYou = (e)=> {
+    }
+    sayThankYou = ()=> {
        alert("Merci pour votre achat.")
-     }
+    }
+    sayGoodBye = () => {
+      alert("Au revoir.")
+    }
 
   render(){
     const myClass = this.props.head ?  'red' : 'blue' ;
@@ -58,9 +61,9 @@ class App extends Component{
     return (
      
      <div className="App">
-     <Btn btnStyle={success} handleClick={sayHello}>say Hello</Btn>
-     <Btn btnStyle={blue} handleClick={sayThankYou}>Cliquez ici</Btn>
-     <Btn btnStyle={ovale} handleClick={sayGoodBye}>Cliquez ici</Btn>
+     <Btn btnStyle={success} handleClick={this.sayHello}>say Hello</Btn>
+     <Btn btnStyle={blue} handleClick={this.sayThankYou}>remerciement</Btn>
+     <Btn btnStyle={ovale} handleClick={this.sayGoodBye}>Au revoir</Btn>
 
       <PostalCard/>
       
