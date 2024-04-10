@@ -45,7 +45,7 @@ class Form extends Component {
         return(
             <div>
                     {/* <h1 className={styles.green}>Commentaire 1</h1> */}
-                <Title>Commentaire</Title>
+                {/* <Title>Commentaire</Title> */}
                 <Button> bouton librairie Styled components</Button>
                 {/* <h2 className='blue'>La patiente c'est le bon comportement que l'on a pendant que l'on attend</h2> */}
                 <form onSubmint={this.handleSubmitForm}>
@@ -69,7 +69,7 @@ class Form extends Component {
                     <div>
                         <label>Commentaire</label>
                         <textarea value={this.state.comment} onChange={this.handleComments}></textarea>
-                        <button  class="btn btn-outline-info" onChange={this.handleSubmit}>soumettre</button>
+                        <button  class="btn btn-outline-info" onChange={this.handleSubmitForm}>soumettre</button>
                     </div>
                 </form>
                 <Car color = "blue" height='180'/>

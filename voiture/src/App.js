@@ -1,9 +1,11 @@
 import './App.css';
 import React , {Component} from 'react';
-import Mycars from './components/iMyCars';
-import Welcome from './/components/Welcome';
-import Maman from './components/Maman';
+// import Mycars from './components/iMyCars';
+// import Welcome from './/components/Welcome';
+// import Maman from './components/Maman';
 import Form from './components/Form';
+import PostalCard from './components/Exo7';
+import Btn from './components/CustomBtn'
 class App extends Component{
 
   state = {
@@ -39,11 +41,29 @@ class App extends Component{
       })
     }
 
+    sayHello =  () => {
+       alert('Bonjour !')
+     }
+     sayThankYou = (e)=> {
+       alert("Merci pour votre achat.")
+     }
+
   render(){
     const myClass = this.props.head ?  'red' : 'blue' ;
+    const success = {background:"green", color:'white', borderRadius: '20px'}
+    const blue = {background:"lightblue", color:'black', borderRadius: '28px'}
+    const ovale = {color:'black', borderRadius: '50%', border: 'yellow solid'}
+
+
     return (
      
      <div className="App">
+     <Btn btnStyle={success} handleClick={sayHello}>say Hello</Btn>
+     <Btn btnStyle={blue} handleClick={sayThankYou}>Cliquez ici</Btn>
+     <Btn btnStyle={ovale} handleClick={sayGoodBye}>Cliquez ici</Btn>
+
+      <PostalCard/>
+      
       <Form head={true}/> 
       <p className={myClass}>Je suis rouge ou bleu</p>
       {/*<Mycars title={this.state.titre}/>
