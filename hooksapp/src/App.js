@@ -6,14 +6,17 @@ import Todo from './components/Todo'
 
 function App() {
   return (
-    <div className="App">
-      <h1 className="text-center">useState Hooks</h1>
-      <ClassState/>
-      <hr/>
-      <FunctionState/>
-      <hr/>
-      <Todo/>
-    </div>
+    <section>
+      <div className="App">
+        <h1 className="text-center">useState Hooks</h1>
+        <ClassState/>
+        <hr/>
+        <FunctionState/>
+      </div>
+      <div className="container">
+        <Todo/>
+      </div>
+    </section>
   );
 }
 

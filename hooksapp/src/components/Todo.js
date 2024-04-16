@@ -6,16 +6,18 @@ const Todo = () => {
         {id:2, todo:'Acheter du pain'},
         {id:3, todo: 'Récupérer le R1 au garage'}
     ])
-    const myTodos = () => {
+    const myTodos = todos.map( todo => {
         return (
-          <li className='list-group-item' key={Todo.id}>{Todo.todo}</li>
+          <li className='list-group-item' key={todo.id}>{todo.todo}</li>
         )
-      }
+      })
     console.log(todos.lenght);
   return (
     <div>
         <h1 >Liste des tâches à faire : </h1>
-        <ul>{myTodos}</ul>
+        <ul>
+            {myTodos}
+        </ul>
     </div>
   )
 }
