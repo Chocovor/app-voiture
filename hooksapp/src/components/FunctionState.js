@@ -8,11 +8,15 @@ const FunctionState = () => {
     const addOne = () => {
         setCounter(prevCounter=> prevCounter+ 1)
     }
+    const zero = ()=> {
+      setCounter(prevCounter=> prevCounter - prevCounter )
+    }
     return (
       <div>
         <p>Function State : {counter} $</p> 
         <button onClick={addOne}>State dans Function +1</button>
         <button onClick={()=>setCounter(prevCounter=> prevCounter-1)}>State dans Function -1</button>
+        <button onClick={zero}>reset</button>
 
       </div>
     );
