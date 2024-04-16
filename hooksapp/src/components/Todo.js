@@ -1,4 +1,6 @@
 import React, {useState} from 'react'
+import AddToDoForm from './AddToDoForm'
+import { v4 as uuidv4 } from 'uuid'
 
 const Todo = () => {
     const[todos, setTodos] = useState([
@@ -8,16 +10,31 @@ const Todo = () => {
     ])
     const myTodos = todos.map( todo => {
         return (
-          <li className='list-group-item' key={todo.id}>{todo.todo}</li>
+            <li className='list-group-item' key={todo.id}>{todo.todo}</li>
         )
-      })
-    console.log(todos.lenght);
+    })
+    // console.log(todos.lenght);
+    const addNewTodo = (newTodo) => {
+    setTodos([...todos,{
+        id:( uuidv4() ) ,
+        todo: newTodo
+    }])
+}
+
   return (
     <div>
         <h1 >Liste des tâches à faire : </h1>
         <ul>
             {myTodos}
         </ul>
+        <AddToDoForm addNewTodo={addNewTodo}/>
+        <button
+            class="btn btn-primary"
+            onClick={() =>
+            setTodos([...todos, { id: ( uuidv4() ), todo: "ne pas oublier la to do list" }])
+            }>
+            Rajouter une tâche
+        </button>
     </div>
   )
 }
