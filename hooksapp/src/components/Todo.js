@@ -14,9 +14,10 @@ const Todo = () => {
         )
     })
     // console.log(todos.lenght);
+    const[id,setID]= useState(uuidv4())
     const addNewTodo = (newTodo) => {
     setTodos([...todos,{
-        id:( uuidv4() ) ,
+        id:({id} ) ,
         todo: newTodo
     }])
 }
