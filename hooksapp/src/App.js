@@ -10,15 +10,15 @@ function App() {
     <section>
       <div className="App">
         <h1 className="text-center">useState Hooks</h1>
-        <ClassState/>
+        {/* <ClassState/>
         <hr/>
-        <FunctionState/>
+        <FunctionState/> */}
       </div>
       <div className="container">
-        <Todo/>
+        {/* <Todo/> */}
       </div>
       <div>
-        {/* <ClassCount/> */}
+        <ClassCount/>
         <FunctionCount/>
       </div>
     </section>
