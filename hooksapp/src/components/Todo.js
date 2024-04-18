@@ -14,16 +14,26 @@ const Todo = () => {
         )
     })
     // console.log(todos.lenght);
-    const[id,setID]= useState(uuidv4())
+    const [warning, setWarning] = useState(false)
+    const warningMsg = warning &&  <div className="alert alert-danger" role='alert'>Veuillez indiquer un Todo</div>
     const addNewTodo = (newTodo) => {
-    setTodos([...todos,{
-        id:({id} ) ,
-        todo: newTodo
-    }])
-}
+        const newID = uuidv4()
+        if(newTodo !== ''){
 
+            warning && setWarning(false)
+
+            setTodos([...todos,{
+                id: newID ,
+                todo: newTodo
+            }])
+        }else{
+            setWarning(true)
+        }
+    }
+console.log(todos)
   return (
     <div>
+        {warningMsg}
         <h1 >Liste des tâches à faire : </h1>
         <ul>
             {myTodos}

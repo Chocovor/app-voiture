@@ -2,6 +2,8 @@ import './App.css';
 import ClassState from './components/Classstate';
 import FunctionState from './components/FunctionState';
 import Todo from './components/Todo'
+import ClassCount from './components/ClassCount';
+import FunctionCount from './components/FunctionCount';
 
 function App() {
   return (
@@ -14,6 +16,10 @@ function App() {
       </div>
       <div className="container">
         <Todo/>
+      </div>
+      <div>
+        {/* <ClassCount/> */}
+        <FunctionCount/>
       </div>
     </section>
   );
