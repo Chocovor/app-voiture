@@ -6,10 +6,11 @@ import './App.css';
 // import FunctionCount from './components/FunctionCount';
 // import Profile from "./components/Profile";
 // import { UserContext, ColorContext } from "./components/MyContext";
-import React, { Component, useReducer} from "react";
+import React, { Component, useReducer, useState, useCallback} from "react";
 import Count from './components/Count';
 import Button from './components/Button';
-import Counti  from './components/Count2';
+import Counti  from './components/Counti';
+import ClickSayHello from './components/ClickSayHello';
 
 //    AVANT EXERCICE 10
 // function App() {
@@ -50,21 +51,42 @@ import Counti  from './components/Count2';
 //     );
 //   }
 // }
-class App extends React.Component {
 
-  render(){
+// EXERCICE 11
+function App(){
 
-    return(
-      <div ClassAme="text-center">
-        test 
-        <Count></Count>
-        <Counti/>
-        <Button>Count 1</Button>
-        <Button>Count 2</Button>
+  const [countOne, setCountOne] = useState({
+    value:0, 
+    btnColor: 'success', 
+    increment:25,
+  })
 
-      </div>
-    );
-  }
+  const [countTwo, setCountTwo] = useState({
+    value:0, 
+    btnColor: 'danger', 
+    increment:20,
+  })
+
+  const incrementCountOne = useCallback((val) => {
+    console.log("je suis dans incrementCountOne");
+    countOne.value < 100 && setCountOne({...countOne, value: countOne.value + val})
+  },[countOne])
+  const incrementCountTwo = useCallback((val) => {
+    console.log("je suis dans incrementCountTwo");
+    countTwo.value < 100 && setCountTwo({...countTwo, value: countTwo.value + val})
+  },[countTwo])
+  return(
+    <div ClassName="container">     
+        <Counti text="CountOne" count={countOne.value} bgColor={countOne.btnColor}/>
+        <Counti text="CountTwo" count={countTwo.value} bgColor={countTwo.btnColor}/>
+
+        <Button handleClick={incrementCountOne} btnColor={countOne.btnColor} increment={countOne.increment}>Count 1</Button>
+        <Button handleClick={incrementCountTwo} btnColor={countTwo.btnColor} increment={countTwo.increment}>Count 2</Button>
+        <div className='App'>
+          <ClickSayHello/>
+        </div>
+    </div>
+  );
 }
 
 export default App;
