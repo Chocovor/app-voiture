@@ -1,13 +1,17 @@
 import './App.css';
-import ClassState from './components/Classstate';
-import FunctionState from './components/FunctionState';
-import Todo from './components/Todo'
-import ClassCount from './components/ClassCount';
-import FunctionCount from './components/FunctionCount';
-import Profile from "./components/Profile";
-import { UserContext, ColorContext } from "./components/MyContext";
-import React, { Component } from "react";
+// import ClassState from './components/Classstate';
+// import FunctionState from './components/FunctionState';
+// import Todo from './components/Todo'
+// import ClassCount from './components/ClassCount';
+// import FunctionCount from './components/FunctionCount';
+// import Profile from "./components/Profile";
+// import { UserContext, ColorContext } from "./components/MyContext";
+import React, { Component, useReducer} from "react";
+import Count from './components/Count';
+import Button from './components/Button';
+import Counti  from './components/Count2';
 
+//    AVANT EXERCICE 10
 // function App() {
 //   return (
 //     <section>
@@ -27,21 +31,40 @@ import React, { Component } from "react";
 //     </section>
 //   );
 // }
-class App extends Component {
-  state = {
-    user: {
-      name: "Lisa",
-      age: 8,
-    },
-  };
-  render() {
-    return (
-      <UserContext.Provider value={this.state.user}>
-        <ColorContext.Provider value={"purple"}>
-          <Profile />
-        </ColorContext.Provider>
-      </UserContext.Provider>
+
+//       EXERCICE 10
+// class App extends Component {
+//   state = {
+//     user: {
+//       name: "Lisa",
+//       age: 8,
+//     },
+//   };
+//   render() {
+//     return (
+//       <UserContext.Provider value={this.state.user}>
+//         <ColorContext.Provider value={"purple"}>
+//           <Profile />
+//         </ColorContext.Provider>
+//       </UserContext.Provider>
+//     );
+//   }
+// }
+class App extends React.Component {
+
+  render(){
+
+    return(
+      <div ClassAme="text-center">
+        test 
+        <Count></Count>
+        <Counti/>
+        <Button>Count 1</Button>
+        <Button>Count 2</Button>
+
+      </div>
     );
   }
 }
+
 export default App;
