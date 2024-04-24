@@ -19,8 +19,7 @@ function FunctionCount() {
       <input type='text' value={name} onChange={(e => setName(e.target.value))}></input>
       <button onClick={()=> setCount(count+1)}>cliques</button>
     </div>
-  )
-  
+  )  
 }
 
 export default FunctionCount
